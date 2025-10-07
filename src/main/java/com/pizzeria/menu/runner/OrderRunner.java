@@ -30,7 +30,7 @@ public class OrderRunner implements CommandLineRunner {
         log.info("costo coperto configurato: €{}", appConfig.getCosto().getCoperto());
         log.info("=".repeat(60));
 
-        // 1. Stampa il menu
+
         log.info("\n menu disponibile:");
         menu.print();
 

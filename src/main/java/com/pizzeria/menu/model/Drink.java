@@ -6,7 +6,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Drink extends Product {
-    private int volume; // in ml
+    private int volume;
 
     public Drink(String name, double price, int calories, int volume) {
         super(name, price, calories);

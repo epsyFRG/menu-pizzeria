@@ -8,6 +8,6 @@ public class MenuPizzeriaApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(MenuPizzeriaApplication.class, args);
-        // Il CommandLineRunner si avvierà automaticamente!
+
     }
 }
