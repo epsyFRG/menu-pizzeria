@@ -1,10 +1,14 @@
 package com.pizzeria.menu.model;
 
+import jakarta.persistence.Entity;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Entity
 @Getter
 @Setter
+@NoArgsConstructor
 public class Topping extends Product {
 
     public Topping(String name, double price, int calories) {

@@ -2,7 +2,6 @@ package com.pizzeria.menu.config;
 
 import com.pizzeria.menu.enums.PizzaSize;
 import com.pizzeria.menu.model.Drink;
-import com.pizzeria.menu.model.Menu;
 import com.pizzeria.menu.model.Pizza;
 import com.pizzeria.menu.model.Topping;
 import org.springframework.context.annotation.Bean;
@@ -10,8 +9,6 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class MenuConfig {
-
-    // toppings
 
     @Bean
     public Topping prosciutto() {
@@ -43,8 +40,6 @@ public class MenuConfig {
         return new Topping("Cipolla", 0.70, 25);
     }
 
-    // pizze
-
     @Bean
     public Pizza margherita() {
         return new Pizza("Margherita", 5.00, 700, PizzaSize.NORMAL);
@@ -75,7 +70,7 @@ public class MenuConfig {
     public Pizza salamePizza() {
         Pizza pizza = new Pizza("Diavola", 5.00, 700, PizzaSize.NORMAL);
         pizza.addTopping(salame());
-        pizza.addTopping(salame()); // Doppio salame!
+        pizza.addTopping(salame());
         return pizza;
     }
 
@@ -87,8 +82,6 @@ public class MenuConfig {
         pizza.addTopping(olive());
         return pizza;
     }
-
-    // bevande
 
     @Bean
     public Drink cocaCola() {
@@ -108,36 +101,5 @@ public class MenuConfig {
     @Bean
     public Drink sprite() {
         return new Drink("Sprite", 2.50, 120, 330);
-    }
-
-    // menu
-
-    @Bean
-    public Menu menu() {
-        Menu menu = new Menu();
-
-        // aggiungi pizze
-        menu.addPizza(margherita());
-        menu.addPizza(margheritaXL());
-        menu.addPizza(hawaiian());
-        menu.addPizza(hawaiianXL());
-        menu.addPizza(salamePizza());
-        menu.addPizza(capricciosa());
-
-        // aggiungi toppings
-        menu.addTopping(prosciutto());
-        menu.addTopping(ananas());
-        menu.addTopping(salame());
-        menu.addTopping(funghi());
-        menu.addTopping(olive());
-        menu.addTopping(cipolla());
-
-        // aggiungi bevande
-        menu.addDrink(cocaCola());
-        menu.addDrink(acqua());
-        menu.addDrink(birra());
-        menu.addDrink(sprite());
-
-        return menu;
     }
 }
